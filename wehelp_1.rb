@@ -7,11 +7,14 @@
 
     def calculate(min, max)
         sum = 0
-        for num in (min..max)
-            sum = sum + num
+        range = (min..max)
+        # range.each{ |num| sum += num }
+        range.each do |num|
+            sum += num
         end
         result = sum
         puts result
     end
+    
     calculate(1,3)
     calculate(4,8)
