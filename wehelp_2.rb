@@ -24,10 +24,13 @@
         # 呼叫 avg 函式
 
 def avg(data)
+    #取出count值
     qty = data[:count]
     sum = 0
     data[:employees].each do |item|
+        #取出salary值
         item = item[:salary]
+        #加總
         sum += item
     end
     puts sum/qty

@@ -11,6 +11,7 @@
 
 def twoSum(nums, target)
     arr = []
+    # ruby的range會包括最後一個數字，因此length要- 1，在做index才不會取到nil
     len = (nums.length) - 1
     range = (0..len)
     range.each do |i|
