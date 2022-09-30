@@ -9,25 +9,31 @@
 # maxZeros([1, 1, 1, 1, 1])# 得到 0
 # maxZeros([0, 0, 0, 1, 1])# 得到 3
 
-def maxZeros(nums)
-    max = 0
-    countZero = 0
-    nums.each do |item|
-        if item == 1
-            countZero = 0
-            next
-        else
-            countZero += 1
-        end
-        if countZero > max
-            max = countZero
-        end
+# def check_zero_qty(element)
+#   count_zero = 0
+#   if element == 1
+#     count_zero = 0
+#   else
+#     count_zero += 1
+#   end
+#   count_zero
+# end
+
+def max_zeros(nums)
+  max = 0
+  count_zero = 0
+  nums.each do |item|
+    if item == 1
+      count_zero = 0
+      next
     end
-    p max
-end                 
+    count_zero += 1
+    max = count_zero if count_zero > max
+  end
+  p max
+end
 
-
-maxZeros([0,1,0,0])
-maxZeros([1,0,0,0,0,1,0,1,0,0])
-maxZeros([1,1,1,1,1])
-maxZeros([0,0,0,1,1])
+max_zeros([0, 1, 0, 0])
+max_zeros([1, 0, 0, 0, 0, 1, 0, 1, 0, 0])
+max_zeros([1, 1, 1, 1, 1])
+max_zeros([0, 0, 0, 1, 1])
