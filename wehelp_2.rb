@@ -20,35 +20,58 @@
 #             "salary":50000
 #         }
 #         ]
-#     })
-        # 呼叫 avg 函式
+# })
+# 呼叫 avg 函式
 
-def avg(data)
-    #取出count值
-    qty = data[:count]
-    sum = 0
-    data[:employees].each do |item|
-        #取出salary值
-        item = item[:salary]
-        #加總
-        sum += item
-    end
-    puts sum/qty
 
+
+# 1. 使用sum 來簡化程式：
+def avg_sum(data)
+  qty = data[:count]
+  result = data[:employees].sum { |totol| totol[:salary] }
+  puts result / qty
 end
 
-avg({
-    count: 3,
-    employees: [
-        {
-            name: "John",
-            salary: 30000},
-        {
-            name: "Bob",
-            salary: 60000},
-        {
-            name: "Jenny",
-            salary: 50000}
-    ]
+avg_sum({
+  count: 3,
+  employees: [
+    {
+      name: "John",
+      salary: 30000
+    },
+    {
+      name: "Bob",
+      salary: 60000
+    },
+    {
+      name: "Jenny",
+      salary: 50000
+    }
+  ]
 })
 
+
+# 2. 使用inject 來簡化程式：
+def avg_inject(data)
+  qty = data[:count]
+  result = data[:employees].inject(0) { |total, element| total + element[:salary] }
+  puts result / qty
+end
+
+avg_inject({
+  count: 3,
+  employees: [
+    {
+      name: "John",
+      salary: 30000
+    },
+    {
+      name: "Bob",
+      salary: 60000
+    },
+    {
+      name: "Jenny",
+      salary: 50000
+    }
+  ]
+})
