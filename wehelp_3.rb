@@ -11,10 +11,9 @@
 # maxProduct([-1, -2, 0]) # 得到 2
 
 def max_product(nums)
-  sort_array = nums.sort
-  len = nums.length
-  first_product = sort_array[0] * sort_array[1]
-  last_product = sort_array[len - 1] * sort_array[len - 2]
+  sorted_array = nums.sort
+  first_product = sorted_array[0] * sorted_array[1]
+  last_product = sorted_array[-1] * sorted_array[-2]
   max = first_product > last_product ? first_product : last_product
   puts max
 end
