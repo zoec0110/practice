@@ -9,18 +9,15 @@
 #     print(result)# show [0, 2] because nums[0]+nums[2]is 9
 
 def two_sum(nums, target)
-  arr = []
-  # ruby的range會包括最後一個數字，因此length要- 1，在做index才不會取到nil
-  len = nums.length - 1
-  range = (0..len)
-  range.each do |i|
-    range.each do |j|
-      if nums[i] + nums[j] == target
-        arr.push(i)
-      end
-    end
+  record = {}
+  (0..(nums.length - 1)).each do |index|
+    current_num = nums[index]
+    diff = target - current_num
+    return [index, record[diff]] if record[diff]
+
+    record[current_num] = index
   end
-  arr
+  [-1, -1]
 end
 
 result = two_sum([2, 11, 7, 15], 9)
