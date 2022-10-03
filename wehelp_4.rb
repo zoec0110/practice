@@ -21,6 +21,3 @@ end
 
 result = two_sum([2, 11, 7, 15], 9)
 print(result) # show [0, 2] because nums[0]+nums[2] is 9
-
-# 建議改成用 each_with_index 的 iterator
-# [5, 10, 15, 20, 25, 30].each_with_index do |num, idx|
