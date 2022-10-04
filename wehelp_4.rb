@@ -10,8 +10,7 @@
 
 def two_sum(nums, target)
   record = {}
-  (0..(nums.length - 1)).each do |index|
-    current_num = nums[index]
+  nums.each_with_index do |current_num, index|
     diff = target - current_num
     return [index, record[diff]] if record[diff]
 
@@ -21,4 +20,4 @@ def two_sum(nums, target)
 end
 
 result = two_sum([2, 11, 7, 15], 9)
-print(result)  # show [0, 2] because nums[0]+nums[2] is 9
+print(result) # show [0, 2] because nums[0]+nums[2] is 9
