@@ -30,7 +30,7 @@ def roman_to_int(string)
   arr = string.chars
   arr.each_with_index do |roman, index|
     temp = map[roman] if map[roman]
-    temp -= (map[arr[index - 1]]) * 2 if index != 0 && (map[arr[index - 1]] < map[arr[index]])
+    temp -= (map[arr[index - 1]]) * 2 if index != 0 && (map[arr[index - 1]] < map[roman])
     result += temp
   end
   p result
